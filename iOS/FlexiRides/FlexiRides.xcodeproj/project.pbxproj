@@ -15,6 +15,7 @@
 		9C25BE6522927667000C1FC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C25BE6322927667000C1FC1 /* LaunchScreen.storyboard */; };
 		9C25BE7022927667000C1FC1 /* FlexiRidesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C25BE6F22927667000C1FC1 /* FlexiRidesTests.swift */; };
 		9C25BE7B22927667000C1FC1 /* FlexiRidesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C25BE7A22927667000C1FC1 /* FlexiRidesUITests.swift */; };
+		9C60DF842292FB2F00DF3429 /* FlexiRidesLogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C60DF822292FB2F00DF3429 /* FlexiRidesLogic.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,9 @@
 		9C25BE7622927667000C1FC1 /* FlexiRidesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlexiRidesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C25BE7A22927667000C1FC1 /* FlexiRidesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexiRidesUITests.swift; sourceTree = "<group>"; };
 		9C25BE7C22927667000C1FC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C60DF812292FB2F00DF3429 /* FlexiRides-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlexiRides-Bridging-Header.h"; sourceTree = "<group>"; };
+		9C60DF822292FB2F00DF3429 /* FlexiRidesLogic.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FlexiRidesLogic.cpp; sourceTree = "<group>"; };
+		9C60DF832292FB2F00DF3429 /* FlexiRidesLogic.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FlexiRidesLogic.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		9C25BE5622927666000C1FC1 /* FlexiRides */ = {
 			isa = PBXGroup;
 			children = (
+				9CBC407B2292E2CB0073DED0 /* Logic */,
 				9C25BE5722927666000C1FC1 /* AppDelegate.swift */,
 				9C25BE5922927666000C1FC1 /* ViewController.swift */,
 				9C25BE5B22927666000C1FC1 /* Main.storyboard */,
@@ -126,6 +131,16 @@
 				9C25BE7C22927667000C1FC1 /* Info.plist */,
 			);
 			path = FlexiRidesUITests;
+			sourceTree = "<group>";
+		};
+		9CBC407B2292E2CB0073DED0 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				9C60DF822292FB2F00DF3429 /* FlexiRidesLogic.cpp */,
+				9C60DF832292FB2F00DF3429 /* FlexiRidesLogic.hpp */,
+				9C60DF812292FB2F00DF3429 /* FlexiRides-Bridging-Header.h */,
+			);
+			path = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +211,7 @@
 				TargetAttributes = {
 					9C25BE5322927666000C1FC1 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					9C25BE6A22927667000C1FC1 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -260,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C25BE5A22927666000C1FC1 /* ViewController.swift in Sources */,
+				9C60DF842292FB2F00DF3429 /* FlexiRidesLogic.cpp in Sources */,
 				9C25BE6022927666000C1FC1 /* FlexiRides.xcdatamodeld in Sources */,
 				9C25BE5822927666000C1FC1 /* AppDelegate.swift in Sources */,
 			);
@@ -436,6 +453,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G84BL5U52X;
 				INFOPLIST_FILE = FlexiRides/Info.plist;
@@ -445,6 +463,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.acnodelabs.apps.FlexiRides;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FlexiRides/Logic/FlexiRides-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -454,6 +474,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G84BL5U52X;
 				INFOPLIST_FILE = FlexiRides/Info.plist;
@@ -463,6 +484,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.acnodelabs.apps.FlexiRides;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FlexiRides/Logic/FlexiRides-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
