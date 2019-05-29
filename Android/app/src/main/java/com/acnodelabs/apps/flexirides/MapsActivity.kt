@@ -2,18 +2,30 @@ package com.acnodelabs.apps.flexirides
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.Spinner
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlin.random.Random
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapsActivity : AppCompatActivity(), OnMapReadyCallback, AdapterView.OnItemSelectedListener {
 
     private lateinit var mMap: GoogleMap
+
+    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onNothingSelected(parent: AdapterView<*>?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +34,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        //Set Spinner
+        val ride_options : Spinner = findViewById(R.id.spinnerOptions)
+
+
     }
 
     /**
@@ -68,7 +85,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         return arr
     }
 
+
+
     private fun FlexiAddAllTaxisAroundMe() {
+
+        //TODO: Did Not Appear
+        var camPos : LatLng = mMap.cameraPosition.target
+        XMark(camPos,"From")
+
         for (v in FlexiDBGetTaxis()) {
             XMark(LatLng(v.lat,v.lon), v.aTitle)
         }
